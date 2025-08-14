@@ -1,0 +1,19 @@
+[[pages]]
+path = "Home.py"
+name = "Início"
+icon = "🏠"
+
+[[pages]]
+path = "Entrada_de_Dados.py"
+name = "Entrada de Grãos"
+icon = "⬆️"
+
+[[pages]]
+path = "Saida_de_Dados.py"
+name = "Saída de Grãos"
+icon = "⬇️"
+
+[[pages]]
+path = "Relatorios.py"
+name = "Relatórios"
+icon = "📊"
