@@ -1,6 +1,5 @@
 from config import PLANILHA_PATH
 import pandas as pd
-
 import streamlit as st
 if "logado" not in st.session_state or not st.session_state.logado:
     st.error("⚠️ Você precisa fazer login para acessar esta página.")
