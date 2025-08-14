@@ -68,10 +68,10 @@ def tela_sistema():
 
     # Caminhos relativos (dentro da pasta 'data')
     caminhos_planilhas = {
-        "Milho": "data/CONTROLE_SILO_MILHO.xlsx",
-        "Soja": "data/CONTROLE_SILO_SOJA.xlsx",
-        "Sorgo": "data/CONTROLE_SILO_SORGO.xlsx",
-        "Milheto": "data/CONTROLE_SILO_MILHETO.xlsx",
+        "Milho": "data/SISTEMA - CONTROLE - MILHO - SILO GRANO.xlsx",
+        "Soja": "data/SISTEMA - CONTROLE - SOJA - SILO GRANO.xlsx",
+        "Sorgo": "data/SISTEMA - CONTROLE - SORGO - SILO GRANO.xlsx",
+        "Milheto": "data/SISTEMA - CONTROLE - MILHETO - SILO GRANO.xlsx",
         "Gado": "data/CONTROLE_SILO_GADO.xlsx"
     }
 
