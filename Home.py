@@ -55,30 +55,31 @@ def tela_sistema():
 
     # ---- LOGO E CABEÇALHO ----
     logo_path = "data/logo_trio_sem_fundo_2.PNG"
-    logo = Image.open(logo_path)
-
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        st.image(logo, use_container_width=True)
-        st.markdown("<h1 style='text-align: center; color: #2E86C1;'>📊 Controle</h1>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center; font-size:18px; color: #555;'>Visualização de dados do sistema</p>", unsafe_allow_html=True)
+    if os.path.exists(logo_path):
+        logo = Image.open(logo_path)
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image(logo, use_container_width=True)
+            st.markdown("<h1 style='text-align: center; color: #2E86C1;'>📊 Controle</h1>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; font-size:18px; color: #555;'>Visualização de dados do sistema</p>", unsafe_allow_html=True)
 
     # ---- SELEÇÃO DE PRODUTO ----
     produto = st.selectbox("Selecione o Produto:", ["Milho", "Soja", "Sorgo", "Milheto", "Gado"])
 
+    # Caminhos relativos (dentro da pasta 'data')
     caminhos_planilhas = {
-        "Milho": r"C:\Users\arman\Desktop\SAFRAS\CONTROLE_SILO_GRANO_RESTAURADO\SISTEMA - CONTROLE - MILHO - SILO GRANO.xlsx",
-        "Soja": r"C:\Users\arman\Desktop\SAFRAS\CONTROLE_SILO_SOJA.xlsx",
-        "Sorgo": r"C:\Users\arman\Desktop\SAFRAS\CONTROLE_SILO_SORGO.xlsx",
-        "Milheto": r"C:\Users\arman\Desktop\SAFRAS\CONTROLE_SILO_MILHETO.xlsx",
-        "Gado": r"C:\Users\arman\Desktop\SAFRAS\CONTROLE_SILO_GADO.xlsx"
+        "Milho": "data/CONTROLE_SILO_MILHO.xlsx",
+        "Soja": "data/CONTROLE_SILO_SOJA.xlsx",
+        "Sorgo": "data/CONTROLE_SILO_SORGO.xlsx",
+        "Milheto": "data/CONTROLE_SILO_MILHETO.xlsx",
+        "Gado": "data/CONTROLE_SILO_GADO.xlsx"
     }
 
     caminho_excel = caminhos_planilhas.get(produto)
 
     # ---- PROCESSAMENTO DOS DADOS ----
-    if caminho_excel is None or not os.path.exists(caminho_excel):
-        st.error("Planilha para o produto selecionado não encontrada ou caminho inválido.")
+    if not os.path.exists(caminho_excel):
+        st.error("Planilha para o produto selecionado não encontrada. Verifique se ela está na pasta 'data'.")
     else:
         try:
             # Aba Financeiro
